@@ -1,0 +1,15 @@
+
+{% extends 'Main.html' %}
+
+{% block content %}
+    <div>
+    <p>Are you sure you wanna buy this course {{ the_course.course_name }} </p>
+    </div>
+    <form action="" method="post">
+    {% csrf_token %}
+
+    <a href="{% url 'student' %}">Cancel</a>
+    <input type="submit" value="PAY">
+    </form>
+
+{% endblock%}

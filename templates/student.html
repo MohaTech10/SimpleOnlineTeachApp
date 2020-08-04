@@ -1,0 +1,55 @@
+{% extends 'Main.html' %}
+
+{% block content %}
+
+<div class="col-md">
+		<div class="card card-body">
+			<h5>Student: {{ current_stu.first_name }}</h5>
+			<hr>
+{#			<a class="btn btn-outline-info  btn-sm btn-block" href="#">Update Customer</a>#}
+
+			<a class="btn btn-warning  btn-sm btn-block" href="{% url 'student_course' %}">My Courses </a>
+
+		</div>
+	</div>
+
+
+    <br/>
+    <div class="row">
+	<div class="col-md">
+        <div class="card card-body">
+            <span>Your Courses: </span>
+			<table class="table table-sm">
+				<tr>
+					<th>Course Name</th>
+					<th>Tag Belong</th>
+					<th>Date Created</th>
+                    <th></th>
+{#					<th>Status</th>#}
+{#					<th>Update</th>#}
+{#					<th>Remove</th>#}
+				</tr>
+{##}
+                {% for course in courses %}
+                <tr>
+                <td>{{ course.course_name }}</td>
+                <td>{{ course.teacher_course.first_name }}</td>
+                <td></td>
+{#                    {% for each_course in user_courses  %}#}
+{#                {% if course.course_name == {{  }} %}#}
+{#                        {% continue %}#}
+{#                    <td><a class="btn btn-info btn-md" href="{% url 'student_course' %}">Pay</a></td>#}
+{#                {% endif %}#}
+{#                {% else %}#}
+                <td><a class="btn btn-info btn-md" href="{% url 'pay_course' course.id %}">Pay</a></td>
+{#                {% endif %}#}
+
+
+                </tr>
+                {% endfor %}
+            </table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

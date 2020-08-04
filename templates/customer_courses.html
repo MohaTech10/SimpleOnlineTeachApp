@@ -1,0 +1,33 @@
+{% extends 'Main.html' %}
+{% block content %}
+    <br/>
+    <div class="row">
+	<div class="col-md">
+        <div class="card card-body">
+            <span>Your Courses: </span>
+			<table class="table table-sm">
+				<tr>
+					<th>Course Name</th>
+					<th>Course Teacher </th>
+					<th>Course Description </th>
+                    <th></th>
+
+                {% for course in your_courses%}
+                    <tr>
+                    <td>{{ course.course_name }}</td>
+                    <td>{{ course.teacher_course.first_name }}</td>
+                    <td>{{ course.course_description }}</td>
+{#                    <td>{{ tag_list }}</td>#}
+
+{#                    <td>d</td>#}
+{#                    <td>dd</td>#}
+                    </tr>
+            {% endfor %}
+
+
+            </table>
+{#            {% endfor %}#}
+		</div>
+	</div>
+</div>
+{% endblock %}

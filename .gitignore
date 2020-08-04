@@ -1,0 +1,7 @@
+
+
+ToDoTasks/
+templates/TASKS
+venv/
+.idea/
+.DS_Store

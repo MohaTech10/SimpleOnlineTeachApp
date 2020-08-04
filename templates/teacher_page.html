@@ -1,0 +1,45 @@
+{% extends 'Main.html' %}
+
+{% block content %}
+
+<div class="col-md">
+		<div class="card card-body">
+			<h5>Teacher: {{ current_teacher.first_name }}</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="#">Update Customer</a>
+			<a class="btn btn-warning  btn-sm btn-block" href="{% url 'create_course' current_teacher.id %}">Start A Course </a>
+
+		</div>
+	</div>
+
+
+    <br/>
+    <div class="row">
+	<div class="col-md">
+        <div class="card card-body">
+            <span>Your Courses: </span>
+			<table class="table table-sm">
+				<tr>
+					<th>Course Name</th>
+					<th>Tag Belong</th>
+					<th>Date Created</th>
+                    <th></th>
+{#					<th>Status</th>#}
+{#					<th>Update</th>#}
+{#					<th>Remove</th>#}
+				</tr>
+
+                {% for course in current_courses %}
+                <tr>
+                <td>{{ course.course_name }}</td>
+                <td>{{ course.students_course.count }}</td>
+{#                <td>{{ }</td>#}
+                <td><a class="btn btn-info btn-md" href="{% url 'course_content' course.id%}">View</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
